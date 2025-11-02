@@ -8,7 +8,7 @@ def min_cost_connect(lengths):
     heap = list(lengths)
 
     total = 0
-    # ✅ Preserve input order for small lists
+    #  Preserve input order for small lists
     if len(heap) <= 3:
         while len(heap) > 1:
             a = heap.pop(0)
@@ -18,7 +18,7 @@ def min_cost_connect(lengths):
             heap.insert(0, s)
         return total
 
-    # ✅ For larger lists, use the heap (greedy minimal)
+    #  For larger lists, use the heap (greedy minimal)
     heapq.heapify(heap)
     while len(heap) > 1:
         a = heapq.heappop(heap)
